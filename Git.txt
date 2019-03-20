@@ -1,0 +1,31 @@
+1、配置全局属性
+git config --global user.name Your Name
+git config --global user.email email@example.com
+2、创建版本库
+git init
+3、添加到git仓库
+git add filename
+git commit -m "修改说明"
+4、版本回退
+git log(查看提交历史)
+git reset --hard HARD^(回退到上一版本)
+git reset --hard HARD~100(回退到上100个版本)
+git reset --hard commit id (回退到指定id的版本)
+git reflog(查看命令历史)
+git checkout -- filename (丢弃工作区的修改,--很重要，没有--，就变成了“切换到另一个分支”的命令)
+git reset HEAD filename (把暂存区的修改撤销掉（unstage），重新放回工作区)
+git rm filename(删除文件)
+5、远程仓库
+ssh-keygen -t rsa -C "youremail@example.com" 创建SSH Key
+git remote add origin git@server-name:GitHub账号/GitHub仓库.git（关联本地仓库与远程仓库）
+git push -u origin master（第一次推送master分支的所有内容）
+git push origin master （推送最新修改）
+git clone git@github.com:GitHub账号/GitHub仓库.git （从远程仓库克隆到本地）
+6、分支管理
+git checkout -b dev （创建并切换到dev分支，git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：1、git branch dev，2、git checkout dev）
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
